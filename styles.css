@@ -3,7 +3,7 @@ html {
   }
   
 body {
-    width: 600px;
+    width: 700px;
     margin: 0 auto;
     background-color: #f1e7d7;
     padding: 0 20px 20px 20px;
@@ -11,7 +11,7 @@ body {
   }
 
 p {
-    font-size: xx-large;
+    font-size: large;
     color: #55c908;
 }
 
