@@ -1,0 +1,19 @@
+html {
+    background-color: #8bb8e2;
+  }
+body {
+    color: lightcoral;
+}
+div {
+    margin: 50px;
+}
+
+.jumbotron { 
+    color: indigo;
+    margin: 10px;
+}
+
+.row {
+    background-color: lightcoral;
+    margin: 10px;
+}
