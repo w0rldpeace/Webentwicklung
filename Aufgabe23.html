@@ -4,6 +4,25 @@
 <title>Meine Portfolioseite</title>
 <link href="styles.css" rel="stylesheet" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<!-- Script fuers Toggle-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Fade-->
+<script>
+  $(document).ready(function(){
+    $(toggleButton).click(function(){
+      $(hiddenMessage).toggle(1000);
+    })
+  })
+</script>
+<!-- Alert -->
+<script>
+  $(document).ready(function(){
+    $(alertButton).click(function(){
+      alert('BOOOOM!');
+    })
+  })
+</script>
+
 </head>
 <body>
 
@@ -20,9 +39,15 @@
   </nav>
 </header>
 <p>Hier erfahren Sie alles was Sie ueber mich wissen muessen!</p>
+<div class="list-group">
+  <button onclick="document.getElementById('time').innerHTML=Date() "type="button" class="list-group-item list-group-item-action active">Time</button>
+  <button type="button" id="toggleButton" class="list-group-item list-group-item-action">Toggle</button>
+  <button type="button" id="alertButton" class="list-group-item list-group-item-action disabled">Don't Click</button>
+</div>
+  <p id="time"></p>
 
-
-  <footer>Bei Fragen kontaktieren Sie Ihren Arzt oder fragen Sie Apotheker</footer>
+  <p2 id="hiddenMessage" hidden="true">Hidden knowledge will reveal itself if you are brave</p2>
   
+  <footer>Bei Fragen kontaktieren Sie Ihren Arzt oder fragen Sie Apotheker</footer>
 </body>
 </html> 
