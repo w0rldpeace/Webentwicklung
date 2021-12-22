@@ -1,11 +1,11 @@
 html {
-    background-color: #8bb8e2;
+    background-color: #255480;
   }
   
 body {
     width: 700px;
     margin: 0 auto;
-    background-color: #f1e7d7;
+    background-color: #c98241;
     padding: 0 20px 20px 20px;
     border: 5px solid black;
   }
@@ -55,7 +55,7 @@ h3 {
   }
   
   .container:hover .overlay {
-    opacity: 0.5;
+    opacity: 0.7;
   }
   
   .text {
