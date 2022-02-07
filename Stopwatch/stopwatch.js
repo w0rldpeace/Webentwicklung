@@ -35,11 +35,11 @@ function timeToString(time) {
   // Create "start", "pause" and "reset" functions
   
   function start() {
-    startTime = Date.now() - elapsedTime; // 0 = 0 - 0 am anfang
+    startTime = Date.now() - elapsedTime; // 0 = ZeitJetzt - 0 am anfang -> startTime = ZeitJetzt
     timerInterval = setInterval(function printTime() {
-      elapsedTime = Date.now() - startTime; //zwei sekunden spaeter ist date.now = 2000. Und unser starttime war ja 0, also elapsedTime = 2000
-      print(timeToString(elapsedTime)); // Ausgabe der lesbaren Zeit auf "display", alle 10 ms
-    }, 10);
+      elapsedTime = Date.now() - startTime; //zwei sekunden spaeter ist date.now = 2000. Und unser starttime ist beim druecken auf play
+      print(timeToString(elapsedTime)); // gesetzt. Anschliessend ziehen wir unsere startTime von aktueller Zeit und erhalten die verstrichene Zeit
+    }, 10); // Ausgabe der lesbaren Zeit auf "display", alle 10 ms
     showButton("PAUSE");
   }
   
@@ -58,17 +58,13 @@ function timeToString(time) {
   // Create function to display buttons
   
   function showButton(buttonKey) {
-    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton; //wenn button "PLAY", zeig play button
+    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton; //wenn gedrueckter button "PLAY", zeig pause button
     const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
     buttonToShow.style.display = "block";
     buttonToHide.style.display = "none";
   }
   // Create event listeners
-  
-  let playButton = document.getElementById("playButton");
-  let pauseButton = document.getElementById("pauseButton");
-  let resetButton = document.getElementById("resetButton");
-  
+
   playButton.addEventListener("click", start);
   pauseButton.addEventListener("click", pause);
   resetButton.addEventListener("click", reset);
