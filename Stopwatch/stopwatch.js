@@ -35,16 +35,16 @@ function timeToString(time) {
   // Create "start", "pause" and "reset" functions
   
   function start() {
-    startTime = Date.now() - elapsedTime;
+    startTime = Date.now() - elapsedTime; // 0 = 0 - 0 am anfang
     timerInterval = setInterval(function printTime() {
-      elapsedTime = Date.now() - startTime;
-      print(timeToString(elapsedTime));
+      elapsedTime = Date.now() - startTime; //zwei sekunden spaeter ist date.now = 2000. Und unser starttime war ja 0, also elapsedTime = 2000
+      print(timeToString(elapsedTime)); // Ausgabe der lesbaren Zeit auf "display", alle 10 ms
     }, 10);
     showButton("PAUSE");
   }
   
   function pause() {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); //Timer setInterval anhalten und die aktuelle Zeit als parameter uebergeben
     showButton("PLAY");
   }
   
@@ -58,7 +58,7 @@ function timeToString(time) {
   // Create function to display buttons
   
   function showButton(buttonKey) {
-    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
+    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton; //wenn button "PLAY", zeig play button
     const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
     buttonToShow.style.display = "block";
     buttonToHide.style.display = "none";
