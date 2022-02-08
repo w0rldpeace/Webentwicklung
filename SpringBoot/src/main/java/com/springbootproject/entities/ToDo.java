@@ -1,4 +1,4 @@
-package com.springbootproject.todo;
+package com.springbootproject.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,10 +16,6 @@ public class ToDo {
 
     @Column(name="TODO_TASK", length=100, nullable=false, unique=false)
     private String task;
-    
-    //Constructor
-    public ToDo() {
-    }
 
     public Long getId() {
         return id;
